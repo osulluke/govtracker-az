@@ -7,4 +7,4 @@ links = soup.find_all('a')
 
 #loop through data to pick out hypertext refs and name fields
 for link in links:
-    print(link.get('href'), link.text, sep=' "', end='"\n')
+    print(link.get('href'), sep=' ', end=' ')

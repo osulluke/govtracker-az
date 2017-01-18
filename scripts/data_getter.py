@@ -14,10 +14,14 @@ for page in websites:
 
     #go get the data from each site
     res = requests.get(page)
-    curl = subprocess.run(["curl", page])
-    print(curl)
-    soup = bs4.BeautifulSoup(res.text, 'html.parser')
-    links = soup.find_all('a')
+    
+    if len(res.text) < 2500:
+        res = subprocess.run(['curl', page])
+        soup = bs4.BeautifulSoup(res, 'html.parser')
+        
+    else:
+        soup = bs4.BeautifulSoup(res.text, 'html.parser')
+        links = soup.find_all('a')
 
     #gather links from each site and print them out
     for link in links:
