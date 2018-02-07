@@ -1,0 +1,1 @@
+cat links.txt | xargs curl -m 3 | grep -Eo "520+-[0-9]+-[0-9]+" 
