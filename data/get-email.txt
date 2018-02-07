@@ -1,0 +1,2 @@
+curl http://www.maranaaz.gov/meet-the-council-members/ | grep -Eo "mailto:.+\.gov" 
+curl http://www.maranaaz.gov/meet-the-council-members/ | grep -Eo "[a-Z]+@[a-Z]+\.gov" 
